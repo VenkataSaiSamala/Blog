@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DataAccess.Blog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(item.BlogTitle, "Details", new { id = item.BlogId });
+    <h4>@item.BlogDate</h4>
+    <h4>@item.BlogDescription</h4>
+}
